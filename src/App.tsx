@@ -3,7 +3,7 @@ import './App.css';
 import {Header} from "./site/Header";
 import {Body} from "./site/Body";
 import {Footer} from "./site/Footer";
-import {NewComponent} from "./NewComponent";
+import {NewComponent} from "./Task1/NewComponent";
 
 const students =  [
     {id: 1, name: "James", age: 8},
@@ -26,14 +26,30 @@ const topCars = [
 ]
 
 function App() {
+    const myFirstSubscriber = () => {
+        console.log('Hello, im Vasya!')
+
+    }
+    const myFirstSubscriber2 = () => {
+        console.log('Hello, im Ivan!')
+    }
+
     return (
+        <div className="App">
+            <button onClick={myFirstSubscriber}>MyYouTubeChanel-1</button>
+            <button onClick={myFirstSubscriber2}>MyYouTubeChanel-2</button>
+        </div>
+    )
+
+   /* <button onClick={(event)=>{console.log('Hello!')}}>MyYouTubeChanel-1</button>
+   return (
         <div>
             <NewComponent topCars={topCars} />
         </div>
     )
 
 
-  /*  return (
+   return (
         <div>
             <NewComponent students={students} />
         </div>
