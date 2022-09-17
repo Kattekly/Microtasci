@@ -19,13 +19,26 @@ const students =  [
     {id: 11, name: "Christopher", age: 100}
 ]
 
+const topCars = [
+    {manufacturer: 'BMW', model: 'm5cs'},
+    {manufacturer: 'Mercedes', model: 'e63s'},
+    {manufacturer: 'Audi', model: 'rs6'}
+]
+
 function App() {
     return (
+        <div>
+            <NewComponent topCars={topCars} />
+        </div>
+    )
+
+
+  /*  return (
         <div>
             <NewComponent students={students} />
         </div>
     )
-    /*(
+    (
         <>
             <Header title={"NEW HEADER"}/>
             <Body titleForBody={"NEW BODY"}/>
