@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Header} from "./site/Header";
 import {Body} from "./site/Body";
 import {Footer} from "./site/Footer";
 import {NewComponent} from "./Task1/NewComponent";
+import {Button} from "./Task2/Components/Button";
+import {NewMoney} from "./Task4/NewComponent";
 
-const students =  [
+const students = [
     {id: 1, name: "James", age: 8},
     {id: 2, name: "Robert", age: 18},
     {id: 3, name: "John", age: 28},
@@ -25,42 +27,130 @@ const topCars = [
     {manufacturer: 'Audi', model: 'rs6'}
 ]
 
-function App() {
-    const myFirstSubscriber = () => {
+
+/* const myFirstSubscriber = (event: React.MouseEvent<HTMLButtonElement>) => {
         console.log('Hello, im Vasya!')
 
     }
-    const myFirstSubscriber2 = () => {
+    const myFirstSubscriber2 = (event: React.MouseEvent<HTMLButtonElement>) => {
         console.log('Hello, im Ivan!')
+    }*/
+
+/*const onClickHandler = (name: string) => {
+    console.log(name)
+}
+const foo1 = () => {
+console.log(100200)
+}
+const onClickHandler = (name: string) => {
+        console.log(name)}
+const foo2 = (nam: number) => {
+console.log(nam)*/
+
+type FilterType = "ALL" | "Dollars" | "RUBLS"
+
+function App() {
+    const [money, setMoney] = useState([
+    { banknots: 'Dollars', value: 100, number: ' a1234567890' },
+    { banknots: 'Dollars', value: 50, number: ' z1234567890' },
+    { banknots: 'RUBLS', value: 100, number: ' w1234567890' },
+    { banknots: 'Dollars', value: 100, number: ' e1234567890' },
+    { banknots: 'Dollars', value: 50, number: ' c1234567890' },
+    { banknots: 'RUBLS', value: 100, number: ' r1234567890' },
+    { banknots: 'Dollars', value: 50, number: ' x1234567890' },
+    { banknots: 'RUBLS', value: 50, number: ' v1234567890' },
+])
+
+    const[filter, setFilter] = useState<FilterType>()
+    let currentMoney = money;
+
+    if (filter === 'RUBLS') {
+        currentMoney = money.filter(filteredMoney => filteredMoney.banknots === "RUBLS")
+    }
+    if (filter === 'Dollars') {
+        currentMoney = money.filter(filteredMoney => filteredMoney.banknots === "Dollars")
     }
 
+
+const onClickFilterHandler = (nameButton: FilterType) => {
+    setFilter(nameButton)
+}
+
     return (
-        <div className="App">
-            <button onClick={myFirstSubscriber}>MyYouTubeChanel-1</button>
-            <button onClick={myFirstSubscriber2}>MyYouTubeChanel-2</button>
-        </div>
-    )
-
-   /* <button onClick={(event)=>{console.log('Hello!')}}>MyYouTubeChanel-1</button>
-   return (
-        <div>
-            <NewComponent topCars={topCars} />
-        </div>
+        <NewMoney money={money} currentMoney ={currentMoney } onClickFilterHandler = {onClickFilterHandler}/>
     )
 
 
-   return (
-        <div>
-            <NewComponent students={students} />
-        </div>
-    )
-    (
-        <>
-            <Header title={"NEW HEADER"}/>
-            <Body titleForBody={"NEW BODY"}/>
-            <Footer titleForFooter={"NEW FOOTER"}/>
-        </>
-    ); */
+
+
+    /* let a = 1
+     let[a, setA] = useState(1)
+ const onClickHandler = () => {
+         setA(++a)
+     console.log(a)
+ }
+
+ const deleteHandler = () => {
+         setA(a=0)
+     console.log(a)
+ }
+
+
+     return (
+         <div className="App">
+             <h1>{a}</h1>
+             <button onClick={onClickHandler}>number</button>
+             <button onClick={deleteHandler}>0</button>
+         </div>
+     )
+
+ /*const Button1Foo = (subscrible: string, age: number, adress: string) => {
+ console.log(subscrible, age, adress)
+ }
+     const Button2Foo = (subscrible: string) => {
+         console.log(subscrible)
+     }
+     const Button3Foo = () => {
+     console.log('Im Styped Button')
+     }
+
+         return (
+             <div className="App">
+                 <Button name={"MyYouTubeChanel-1"} callBack={() => Button1Foo("Im Vasya", 21, "live in Minsk")}/>
+                 <Button name={"MyYouTubeChanel-2"} callBack={() => Button2Foo("Im Ivan")}/>
+             <Button name={"StypedButton"} callBack={Button3Foo} />
+             </div>
+         )
+         /*    <button
+                     onClick={(event: React.MouseEvent<HTMLButtonElement>) => onClickHandler("Vasya")}>MyYouTubeChanel-1
+                 </button>
+                 <button
+                     onClick={(event: React.MouseEvent<HTMLButtonElement>) => onClickHandler("Ivan")}>MyYouTubeChanel-2
+                 </button>
+                 <button onClick={foo1}>1</button>
+                 <button onClick={() => foo2(100200)}>2</button>
+
+                  <button onClick={() => onClickHandler("some info")}>MyYouTubeChanel-3</button>
+                  <button onClick={(event)=>{console.log('Hello!')}}>MyYouTubeChanel-1</button>
+         return (
+              <div>
+                  <NewComponent topCars={topCars} />
+              </div>
+          )
+
+
+         return (
+              <div>
+                  <NewComponent students={students} />
+              </div>
+          )
+          (
+              <>
+                  <Header title={"NEW HEADER"}/>
+                  <Body titleForBody={"NEW BODY"}/>
+                  <Footer titleForFooter={"NEW FOOTER"}/>
+              </>
+          ); */
 }
 
 export default App;
