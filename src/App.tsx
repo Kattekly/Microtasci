@@ -7,6 +7,8 @@ import {NewComponent} from "./Task2/NewComponent";
 import {Button} from "./Task3/Components/Button";
 import {NewMoney} from "./Task5/NewComponent";
 import {FullInput} from "./Task6/FullInput";
+import {Input} from "./Task6/Input";
+import {Button1} from "./Task6/Button";
 
 function App() {
     let [message, setMessage] = useState([
@@ -17,14 +19,23 @@ function App() {
             {message: 'message5'}
     ])
 
+    let [title, setTitle] = useState('')
+    console.log(title)
+
  const addMessage = (title: string) => {
         let newMessage = {message: title};
      setMessage([newMessage,...message])
     }
-
+const callBackButtonHandler = () => {
+    addMessage(title)
+    setTitle('')
+}
     return (
         <div className={'App'}>
-            <FullInput addMessage={addMessage}/>
+            <Input setTitle={setTitle} title={title}/>
+            <Button1 name={'+'} callBack={callBackButtonHandler} />
+
+            {/*<FullInput addMessage={addMessage}/>*/}
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
