@@ -1,12 +1,39 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Header} from "./site/Header";
-import {Body} from "./site/Body";
-import {Footer} from "./site/Footer";
-import {NewComponent} from "./Task1/NewComponent";
-import {Button} from "./Task2/Components/Button";
-import {NewMoney} from "./Task4/NewComponent";
+import {Header} from "./Task1/Header";
+import {Body} from "./Task1/Body";
+import {Footer} from "./Task1/Footer";
+import {NewComponent} from "./Task2/NewComponent";
+import {Button} from "./Task3/Components/Button";
+import {NewMoney} from "./Task5/NewComponent";
 
+function App() {
+    let [message, setMessage] = useState([
+            {message: 'message1'},
+            {message: 'message2'},
+            {message: 'message3'},
+            {message: 'message4'},
+            {message: 'message5'}
+    ])
+    return (
+        <div className={'App'}>
+            <div>
+                <input/>
+                <button>+</button>
+            </div>
+            {message.map((el, index) => {
+                return (
+                    <div key={index}>{el.message}</div>
+                )
+            })}
+        </div>
+    )
+}
+
+export default App;
+
+
+/*
 const students = [
     {id: 1, name: "James", age: 8},
     {id: 2, name: "Robert", age: 18},
@@ -47,9 +74,11 @@ const onClickHandler = (name: string) => {
 const foo2 = (nam: number) => {
 console.log(nam)*/
 
-type FilterType = "ALL" | "Dollars" | "RUBLS"
 
-function App() {
+/*
+
+    type FilterType = "ALL" | "Dollars" | "RUBLS"
+
     const [money, setMoney] = useState([
     { banknots: 'Dollars', value: 100, number: ' a1234567890' },
     { banknots: 'Dollars', value: 50, number: ' z1234567890' },
@@ -151,6 +180,3 @@ const onClickFilterHandler = (nameButton: FilterType) => {
                   <Footer titleForFooter={"NEW FOOTER"}/>
               </>
           ); */
-}
-
-export default App;
