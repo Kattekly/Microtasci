@@ -6,6 +6,7 @@ import {Footer} from "./Task1/Footer";
 import {NewComponent} from "./Task2/NewComponent";
 import {Button} from "./Task3/Components/Button";
 import {NewMoney} from "./Task5/NewComponent";
+import {FullInput} from "./Task6/FullInput";
 
 function App() {
     let [message, setMessage] = useState([
@@ -17,10 +18,7 @@ function App() {
     ])
     return (
         <div className={'App'}>
-            <div>
-                <input/>
-                <button>+</button>
-            </div>
+            <FullInput />
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
