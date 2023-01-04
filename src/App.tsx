@@ -12,28 +12,28 @@ import {Button1} from "./Task6/Button";
 
 function App() {
     let [message, setMessage] = useState([
-            {message: 'message1'},
-            {message: 'message2'},
-            {message: 'message3'},
-            {message: 'message4'},
-            {message: 'message5'}
+        {message: 'message1'},
+        {message: 'message2'},
+        {message: 'message3'},
+        {message: 'message4'},
+        {message: 'message5'}
     ])
 
     let [title, setTitle] = useState('')
     console.log(title)
 
- const addMessage = (title: string) => {
+    const addMessage = (title: string) => {
         let newMessage = {message: title};
-     setMessage([newMessage,...message])
+        setMessage([newMessage, ...message])
     }
-const callBackButtonHandler = () => {
-    addMessage(title)
-    setTitle('')
-}
+    const callBackButtonHandler = () => {
+        addMessage(title)
+        setTitle('')
+    }
     return (
         <div className={'App'}>
             <Input setTitle={setTitle} title={title}/>
-            <Button1 name={'+'} callBack={callBackButtonHandler} />
+            <Button1 name={'+'} callBack={callBackButtonHandler}/>
 
             {/*<FullInput addMessage={addMessage}/>*/}
             {message.map((el, index) => {
