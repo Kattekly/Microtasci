@@ -16,8 +16,8 @@ const NewComponent = (props: NewComponentType) => {
         <ul>
             {props.students.map((el, id) => {
                 return (<li key={el.id}>
-                   <span>{el.name}</span>
-                    <span>{el.age}</span>
+                    <span>{el.name}</span>
+                    <span>{` ${el.age}`}</span>
                 </li>)
             })}
         </ul>
