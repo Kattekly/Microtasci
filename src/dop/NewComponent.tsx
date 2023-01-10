@@ -10,12 +10,16 @@ type NewComponentType = {
     students: Array<StudentType>
 }
 
-type CarsType = {
+type CarType = {
     manufacturer: string
     model: string
 }
 
-const NewComponent = (props: Array<CarsType>) => {
+type CarsType = {
+    topCars: Array<CarsType>
+}
+
+const NewComponent = (props: CarsType) => {
     const topCars = [
         {manufacturer: 'BMW', model: 'm5cs'},
         {manufacturer: 'Mercedes', model: 'e63s'},
@@ -23,7 +27,7 @@ const NewComponent = (props: Array<CarsType>) => {
     ]
     return (
         <table>
-            {props}
+            {props.topCars}
 
             <tr>
                 <th></th>
