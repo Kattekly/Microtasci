@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import NewComponent from "./NewComponent";
 
-function App() {
+function Dop() {
     const [students, setStudents] = useState([
             {id: 1, name: "James", age: 8},
             {id: 2, name: "Robert", age: 18},
@@ -21,4 +21,4 @@ function App() {
     );
 }
 
-export default App;
+export default Dop;
