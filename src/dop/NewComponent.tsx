@@ -13,9 +13,14 @@ type NewComponentType = {
 
 const NewComponent = (props: NewComponentType) => {
     return (
-        <div>
-            new component
-        </div>
+        <ul>
+            {props.students.map((el, id) => {
+                return (<li key={el.id}>
+                   <span>{el.name}</span>
+                    <span>{el.age}</span>
+                </li>)
+            })}
+        </ul>
     );
 };
 
