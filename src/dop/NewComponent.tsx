@@ -6,7 +6,10 @@ type StudentType = {
     age: number
 }
 
-type NewComponentType = Array<StudentType>
+type NewComponentType = {
+    students: Array<StudentType>
+}
+
 
 const NewComponent = (props: NewComponentType) => {
     return (
