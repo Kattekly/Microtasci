@@ -1,15 +1,7 @@
 import React, {useState} from 'react';
-import {NewComponent} from "./NewComponent";
+import NewComponent from "./NewComponent";
 
-type StudentType = {
-    id: number
-    name: string
-    age: number
-}
-
-type NewComponentType = Array<StudentType>
-
-function App(props: NewComponentType) {
+function App() {
     const [students, setStudents] = useState([
             {id: 1, name: "James", age: 8},
             {id: 2, name: "Robert", age: 18},

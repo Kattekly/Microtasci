@@ -1,6 +1,14 @@
 import React from 'react';
 
-const NewComponent = () => {
+type StudentType = {
+    id: number
+    name: string
+    age: number
+}
+
+type NewComponentType = Array<StudentType>
+
+const NewComponent = (props: NewComponentType) => {
     return (
         <div>
             new component
