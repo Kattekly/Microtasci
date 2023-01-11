@@ -6,8 +6,13 @@ type UniversalButtonType = {
 }
 
 const UniversalButton = (props: UniversalButtonType) => {
+
+    const onClickHandler = () => {
+
+    }
+
     return (
-        <button>{props.name}</button>
+        <button onClick={onClickHandler}>{props.name}</button>
     );
 };
 
