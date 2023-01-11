@@ -4,13 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Dop from "./dop/dop";
+import ButtonFile from "./dop/ButtonFile";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Dop />
+    <ButtonFile />
   </React.StrictMode>
 );
 

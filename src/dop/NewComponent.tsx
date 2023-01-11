@@ -1,6 +1,6 @@
 import React from 'react';
 
-type StudentType = {
+/*type StudentType = {
     id: number
     name: string
     age: number
@@ -8,7 +8,7 @@ type StudentType = {
 
 type NewComponentType = {
     students: Array<StudentType>
-}
+}*/
 
 type CarType = {
     manufacturer: string
