@@ -9,7 +9,7 @@ type UniversalButtonType = {
 const UniversalButton = (props: UniversalButtonType) => {
 
     const onClickHandler = () => {
-        props.callback
+        props.callback()
     }
 
     return (
