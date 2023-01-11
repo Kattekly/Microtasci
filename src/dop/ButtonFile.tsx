@@ -1,11 +1,11 @@
 import React from 'react';
 
 const ButtonFile = () => {
-    const FirstSubs = () => {
+    const FirstSubs = (event: React.MouseEvent<HTMLButtonElement>) => {
         alert('Hello Yo')
     }
 
-    const FirstSubs2 = () => {
+    const FirstSubs2 = (event: React.MouseEvent<HTMLButtonElement>) => {
         alert('Hello Marry')
     }
 
