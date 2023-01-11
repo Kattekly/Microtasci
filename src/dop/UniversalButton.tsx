@@ -1,8 +1,13 @@
 import React from 'react';
 
-const UniversalButton = () => {
+
+type UniversalButtonType = {
+    name: string
+}
+
+const UniversalButton = (props: UniversalButtonType) => {
     return (
-        <button>ggg</button>
+        <button>{props.name}</button>
     );
 };
 

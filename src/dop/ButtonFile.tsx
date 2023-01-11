@@ -6,7 +6,8 @@ const ButtonFile = () => {
 
     return (
         <div>
-            <UniversalButton/>
+            <UniversalButton name={'My'}/>
+            <UniversalButton name={'You'}/>
         </div>
     );
 };
