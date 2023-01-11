@@ -5,10 +5,15 @@ const ButtonFile = () => {
         alert('Hello Yo')
     }
 
+    const FirstSubs2 = () => {
+        alert('Hello Marry')
+    }
+
     return (
         <div>
-            <button onClick={(event)=>{alert('Hello')}}>MyChanel-1</button>
-            <button onClick={FirstSubs}>MyChanel-2</button>
+           {/* <button onClick={(event)=>{alert('Hello')}}>MyChanel-1</button>*/}
+            <button onClick={FirstSubs}>MyChanel-1</button>
+            <button onClick={FirstSubs2}>MyChanel-2</button>
         </div>
     );
 };
