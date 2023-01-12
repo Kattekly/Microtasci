@@ -13,19 +13,31 @@ const FilterFile = () => {
     ])
 
 
+    let currentMoney = money.filter((m) => m.banknots === 'RUBLS')
+
+    const onClickHandler = () => {
+
+    }
+
     return (
-        <ul>
-            {money.map((objArr, index) => {
-                return (
-                    <li key={index}>
-                        <span>{objArr.banknots}</span>
-                        <span>{objArr.value}</span>
-                        <span>{objArr.number}</span>
-                    </li>
-                )
-            })}
-        </ul>
-    );
+        <>
+            <ul>
+                {currentMoney.map((objArr, index) => {
+                    return (
+                        <li key={index}>
+                            <span>{objArr.banknots}</span>
+                            <span>{objArr.value}</span>
+                            <span>{objArr.number}</span>
+                        </li>
+                    )
+                })}
+            </ul>
+            <div style={{marginLeft: "35px"}}>
+                <button onClick={onClickHandler}>ALL</button>
+                <button onClick={onClickHandler}>RUBLS</button>
+                <button onClick={onClickHandler}>DOLLARS</button>
+            </div>
+        </>);
 };
 
 export default FilterFile;
