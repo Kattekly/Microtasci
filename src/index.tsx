@@ -5,13 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Dop from "./dop/dop";
 import ButtonFile from "./dop/ButtonFile";
+import FilterFile from "./dop/FilterFile";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ButtonFile />
+    <FilterFile />
   </React.StrictMode>
 );
 

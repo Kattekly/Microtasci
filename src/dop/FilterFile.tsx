@@ -15,9 +15,9 @@ const FilterFile = () => {
 
     return (
         <ul>
-            {money.map((objArr) => {
+            {money.map((objArr, index) => {
                 return (
-                    <li>
+                    <li key={index}>
                         <span>{objArr.banknots}</span>
                         <span>{objArr.value}</span>
                         <span>{objArr.number}</span>
