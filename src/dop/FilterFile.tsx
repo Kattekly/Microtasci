@@ -13,7 +13,7 @@ const FilterFile = () => {
         {banknots: 'Dollars', value: 50, number: ' x1234567890'},
         {banknots: 'RUBLS', value: 50, number: ' v1234567890'},
     ])
-    const [filter, setFilter] = useState<FilterType>()
+    const [filter, setFilter] = useState<FilterType>('ALL')
     let currentMoney = money
     if (filter === 'RUBLS') {
         currentMoney = money.filter((m) => m.banknots === 'RUBLS')
