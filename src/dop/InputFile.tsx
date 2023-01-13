@@ -1,4 +1,5 @@
 import {useState} from "react";
+import FullInput from "./FullInput";
 
 export function InputFile() {
     const [message, setMessage] = useState([
@@ -11,10 +12,7 @@ export function InputFile() {
     )
     return (
         <div className="App">
-            <div>
-                <input/>
-                <button>+</button>
-            </div>
+            <FullInput/>
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
