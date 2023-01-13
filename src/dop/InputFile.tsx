@@ -12,8 +12,8 @@ export function InputFile() {
     )
 
     const addMessage = (title: string) => {
-        let newMessage = {message: 'newMessage'}
-        setMessage([...message, newMessage])
+        let newMessage = {message: title}
+        setMessage([newMessage, ...message])
     }
 
     return (
