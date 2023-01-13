@@ -6,13 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import Dop from "./dop/dop";
 import ButtonFile from "./dop/ButtonFile";
 import FilterFile from "./dop/FilterFile";
+import {InputFile} from "./dop/InputFile";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <FilterFile />
+    <InputFile />
   </React.StrictMode>
 );
 
