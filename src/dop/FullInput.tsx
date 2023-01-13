@@ -1,11 +1,11 @@
 import React, {ChangeEvent, useState} from 'react';
 
 type InputType= {
-    callback: () => void
+    addMessage: () => void
 }
 
 const FullInput = (props: InputType) => {
-   const {callback} = props
+   const {addMessage} = props
 
     let [title, setTitle] = useState('')
 
@@ -22,7 +22,7 @@ const FullInput = (props: InputType) => {
     return (
         <div>
             <input onChange={onChangeInputHandler}/>
-            <button onClick={callback}>+</button>
+            <button onClick={addMessage}>+</button>
         </div>
     );
 };

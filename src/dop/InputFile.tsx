@@ -17,7 +17,7 @@ export function InputFile() {
 
     return (
         <div className="App">
-            <FullInput callback={addMessage}/>
+            <FullInput addMessage={addMessage}/>
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
