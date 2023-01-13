@@ -1,6 +1,12 @@
 import React, {ChangeEvent, useState} from 'react';
 
-const FullInput = () => {
+type InputType= {
+    callback: () => void
+}
+
+const FullInput = (props: InputType) => {
+   const {callback} = props
+
     let [title, setTitle] = useState('')
 
     let onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -16,7 +22,7 @@ const FullInput = () => {
     return (
         <div>
             <input onChange={onChangeInputHandler}/>
-            <button onClick={onClickButtonHandler}>+</button>
+            <button onClick={callback}>+</button>
         </div>
     );
 };

@@ -10,9 +10,14 @@ export function InputFile() {
             {message: 'message5'}
         ]
     )
+
+    const addMessage = () => {
+        console.log('Hi')
+    }
+
     return (
         <div className="App">
-            <FullInput/>
+            <FullInput callback={addMessage}/>
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
