@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const FullInput = () => {
+    let[title, setTitle] = useState()
+
     return (
         <div>
             <input/>
