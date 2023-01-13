@@ -2,7 +2,7 @@ import React, {ChangeEvent} from 'react';
 
 type InputType = {
     title: string
-    setTitle: () => void
+    setTitle: (title: string) => void
 }
 
 const Input: React.FC<InputType> = (props) => {
