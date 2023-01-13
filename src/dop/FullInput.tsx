@@ -11,17 +11,18 @@ const FullInput = (props: InputType) => {
 
     let onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setTitle(e.currentTarget.value)
-        console.log(title)
+
     }
 
     let onClickButtonHandler = () => {
         addMessage(title)
+        setTitle('')
     }
 
 
     return (
         <div>
-            <input onChange={onChangeInputHandler}/>
+            <input value={title} onChange={onChangeInputHandler}/>
             <button onClick={onClickButtonHandler}>+</button>
         </div>
     );
