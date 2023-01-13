@@ -13,6 +13,8 @@ export function InputFile() {
         ]
     )
 
+    let [title, setTitle] = useState('')
+
     const addMessage = (title: string) => {
         let newMessage = {message: title}
         setMessage([newMessage, ...message])
@@ -20,8 +22,8 @@ export function InputFile() {
 
     return (
         <div className="App">
-            <Input/>
-            <Button/>
+            <Input title={title} setTitle={setTitle}/>
+            <Button name={'+'} callback={() => {}}/>
 
            {/* <FullInput addMessage={addMessage}/>*/}
             {message.map((el, index) => {
