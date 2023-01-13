@@ -1,7 +1,7 @@
 import React, {ChangeEvent, useState} from 'react';
 
 type InputType= {
-    addMessage: () => void
+    addMessage: (title: string) => void
 }
 
 const FullInput = (props: InputType) => {
@@ -14,15 +14,15 @@ const FullInput = (props: InputType) => {
         console.log(title)
     }
 
-    let onClickButtonHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-
+    let onClickButtonHandler = (title: string) => {
+        addMessage(title)
     }
 
 
     return (
         <div>
             <input onChange={onChangeInputHandler}/>
-            <button onClick={addMessage}>+</button>
+            <button onClick={() => onClickButtonHandler(title)}>+</button>
         </div>
     );
 };

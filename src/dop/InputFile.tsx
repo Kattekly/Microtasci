@@ -11,7 +11,7 @@ export function InputFile() {
         ]
     )
 
-    const addMessage = () => {
+    const addMessage = (title: string) => {
         console.log('Hi')
     }
 
