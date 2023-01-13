@@ -1,12 +1,21 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 
 const FullInput = () => {
-    let[title, setTitle] = useState()
+    let [title, setTitle] = useState('')
+
+    let onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
+
+    }
+
+    let onClickButtonHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+
+    }
+
 
     return (
         <div>
-            <input/>
-            <button>+</button>
+            <input onChange={onChangeInputHandler}/>
+            <button onClick={onClickButtonHandler}>+</button>
         </div>
     );
 };
