@@ -1,5 +1,7 @@
 import {useState} from "react";
 import FullInput from "./FullInput";
+import Input from "./Input";
+import Button from "./Button";
 
 export function InputFile() {
     const [message, setMessage] = useState([
@@ -18,7 +20,10 @@ export function InputFile() {
 
     return (
         <div className="App">
-            <FullInput addMessage={addMessage}/>
+            <Input/>
+            <Button/>
+
+           {/* <FullInput addMessage={addMessage}/>*/}
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
