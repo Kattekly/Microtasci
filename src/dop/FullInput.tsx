@@ -14,7 +14,7 @@ const FullInput = (props: InputType) => {
         console.log(title)
     }
 
-    let onClickButtonHandler = (title: string) => {
+    let onClickButtonHandler = () => {
         addMessage(title)
     }
 
@@ -22,7 +22,7 @@ const FullInput = (props: InputType) => {
     return (
         <div>
             <input onChange={onChangeInputHandler}/>
-            <button onClick={() => onClickButtonHandler(title)}>+</button>
+            <button onClick={onClickButtonHandler}>+</button>
         </div>
     );
 };
